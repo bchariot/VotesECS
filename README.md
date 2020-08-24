@@ -23,7 +23,7 @@ In EC2:
   - HTTPS port 443 (CIDR blocks 0.0.0.0/0 and ::0)
   - Custom TCP port 5000 (CIDR block 0.0.0.0/0)
 
-Upload code from github:
+Upload code from GitHub:
 
 ```
 ~>$ git clone https://github.com/bchariot/VotesECS.git VotesECS
@@ -31,8 +31,10 @@ Upload code from github:
 
 Install modules:
 
+```
 ~VotesECS>$ npm install
 ~VotesECS/client>$ npm install 
+```
 
 Make sure ngnix is installed in EC2 Ubuntu server instance.  Configure the following in the file:
 
