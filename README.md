@@ -16,15 +16,20 @@ votesecs/client> npm run build
 
 ### `Deploy to EC2`
 
-In EC2, launch an Ubuntu server and add rules to its Service Groups for HTTP port 80, HTTPS port 443. Add a Customer TCP for port 5000.
+In EC2:
+- launch an Ubuntu Amazon EC2 instance
+- add inbound rules to its Service Groups:
+  - HTTP port 80 (CIDR blocks 0.0.0.0/0 and ::0)
+  - HTTPS port 443 (CIDR blocks 0.0.0.0/0 and ::0)
+  - Custom TCP port 5000 (CIDR block 0.0.0.0/0)
 
-Upload from github:
+Upload code from github:
 
 ```
 ~>$ git clone https://github.com/bchariot/VotesECS.git VotesECS
 ```
 
-Install modules on EC2 instance:
+Install modules:
 
 ~VotesECS>$ npm install
 ~VotesECS/client>$ npm install 
@@ -58,8 +63,8 @@ server {
 ### `Run Project In EC2`
 
 ```
-~VotesECS>$ npm start
 ~VotesECS>$ sudo service nginx restart
+~VotesECS>$ npm start
 ```
 
 ### `Stop Project`
